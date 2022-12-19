@@ -2,9 +2,9 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/terraform-provider-openstack/openstack" {
-  version     = "1.48.0"
-  constraints = "~> 1.48.0"
+  version = "1.48.0"
   hashes = [
+    "h1:mTlCzugRpavDX3IG2zAs6ZainqpTUpNnQKbQuR523NA=",
     "h1:qjf/qyH9oKOMujQk59bNxV8yLRbUhmihxMRrKOeA8qI=",
     "zh:1fe237fa1153e05879fd26857416a1d029a3f108e32e83c4931dd874c777aa6a",
     "zh:2c4587b4c810d569aafd69e287ecc2ee910e6c16cfc784e49861e0a8066b8655",

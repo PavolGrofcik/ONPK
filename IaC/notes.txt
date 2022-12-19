@@ -1,4 +1,5 @@
 Passwords are stored in secret.tfvars
-In order to use the passwors and variables.tf
+In order to use the passwords in variables.tf
 you must specify -var-file flag when applying 
-changes in terraform.
+changes in terraform or use terraform.auto.tfvars 
+file with provided credentials and sensitive information
