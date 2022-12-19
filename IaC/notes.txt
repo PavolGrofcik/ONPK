@@ -1,0 +1,4 @@
+Passwords are stored in secret.tfvars
+In order to use the passwors and variables.tf
+you must specify -var-file flag when applying 
+changes in terraform.
