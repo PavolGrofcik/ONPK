@@ -38,5 +38,5 @@ variable "key_pair" {
 variable "remote_ip_prefix" {
   description = "Remote ip to connect"
   type = string
-  default = "158.193.143.8"
+  default = "158.193.0.0/16"
 }
