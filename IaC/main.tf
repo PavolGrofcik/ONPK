@@ -17,7 +17,7 @@ resource "openstack_networking_secgroup_rule_v2" "secgroup_rule_ssh" {
   protocol          = "tcp"
   port_range_min    = 22
   port_range_max    = 22
-  remote_ip_prefix  = var.remote_ip_prefix
+  remote_ip_prefix  = "158.193.0.0/16"#var.remote_ip_prefix
   security_group_id = "${openstack_networking_secgroup_v2.secgroup_1.id}"
 }
 
@@ -27,7 +27,7 @@ resource "openstack_networking_secgroup_rule_v2" "secgroup_rule_ping" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "icmp"
-  remote_ip_prefix  = var.remote_ip_prefix
+  remote_ip_prefix  = "158.193.0.0/16"#var.remote_ip_prefix
   security_group_id = "${openstack_networking_secgroup_v2.secgroup_1.id}"
 }
 
@@ -42,19 +42,3 @@ resource "openstack_compute_instance_v2" "v_instance_server" {
     name = "ext-net"
   }
 }
-
-# resource "openstack_compute_instance_v2" "basic" {
-#   name            = "basic"
-#   image_id        = "0fc1152a-4037-4d89-a22a-60f477e2eba0"
-#   flavor_id       = "1eee6fc3-f274-4406-a054-1969ac79926f"
-#   key_pair        = "pgrofcik"
-#   security_groups = ["default"]
-
-#   metadata = {
-#     this = "that"
-#   }
-
-#   network {
-#     name = "ext-net"
-#   }
-# }
