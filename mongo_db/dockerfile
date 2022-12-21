@@ -1,0 +1,10 @@
+FROM mongo:4.2.23
+
+ENV MONGO_CONN_STR=mongodb://localhost:27017/platformsdb \
+MONGO_USERNAME=admin \
+MONGO_PASSWORD=password \
+MONGO_INITDB_DATABASE=platformsdb
+
+#Populate mongo db
+COPY ./pre_init/ /docker-entrypoint-initdb.d/
+

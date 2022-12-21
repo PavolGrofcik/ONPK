@@ -1,5 +1,10 @@
-Passwords are stored in secret.tfvars
+First off all you need to connect to UNIZA FRI
+VPN network to successfully login via terraform.
+
+
+Passwords are stored in secret.tfvars or 
+in terraform.auto.tfvars file.
 In order to use the passwords in variables.tf
-you must specify -var-file flag when applying 
+you must specify -var-file flag when applying secret.tfvars
 changes in terraform or use terraform.auto.tfvars 
 file with provided credentials and sensitive information

@@ -1,0 +1,13 @@
+FROM golang:alpine
+
+COPY . /app
+WORKDIR /app
+
+# ENV MONGO_CONN_STR=mongodb://localhost:27017/ \
+# MONGO_USERNAME=admin \
+# MONGO_PASSWORD=password \
+# MONGO_INITDB_DATABASE=platformsdb
+
+RUN go build -o /app-backend-go
+CMD ["/app-backend-go"]
+

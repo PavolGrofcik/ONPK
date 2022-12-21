@@ -15,6 +15,6 @@ provider "openstack" {
   tenant_name = var.project_name
   auth_url    = local.uniza_os_auth_url
   region      = local.uniza_os_region
-  insecure    = true  #http not secured protocol
+  insecure    = true  #http not secured protocol over uniza vpn
   endpoint_overrides =  local.uniza_os_endpoint_overrides
 }

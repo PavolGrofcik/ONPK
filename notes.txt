@@ -1,0 +1,2 @@
+To connect BE to DB set up common network
+and find ipv4 for DB container and export that ip

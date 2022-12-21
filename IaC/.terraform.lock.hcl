@@ -5,6 +5,7 @@ provider "registry.terraform.io/hashicorp/cloudinit" {
   version = "2.2.0"
   hashes = [
     "h1:CUOSIT4XzkJXEpPp4dBL+rxxLgqamwiMvuhBVNHC7AI=",
+    "h1:tQLNREqesrdCQ/bIJnl0+yUK+XfdWzAG0wo4lp10LvM=",
     "zh:76825122171f9ea2287fd27e23e80a7eb482f6491a4f41a096d77b666896ee96",
     "zh:795a36dee548e30ca9c9d474af9ad6d29290e0a9816154ad38d55381cd0ab12d",
     "zh:9200f02cb917fb99e44b40a68936fd60d338e4d30a718b7e2e48024a795a61b9",
@@ -22,6 +23,7 @@ provider "registry.terraform.io/hashicorp/cloudinit" {
 provider "registry.terraform.io/hashicorp/template" {
   version = "2.2.0"
   hashes = [
+    "h1:94qn780bi1qjrbC3uQtjJh3Wkfwd5+tTtJHOb7KTg9w=",
     "h1:LN84cu+BZpVRvYlCzrbPfCRDaIelSyEx/W9Iwwgbnn4=",
     "zh:01702196f0a0492ec07917db7aaa595843d8f171dc195f4c988d2ffca2a06386",
     "zh:09aae3da826ba3d7df69efeb25d146a1de0d03e951d35019a0f80e4f58c89b53",
@@ -39,6 +41,7 @@ provider "registry.terraform.io/hashicorp/template" {
 provider "registry.terraform.io/terraform-provider-openstack/openstack" {
   version = "1.49.0"
   hashes = [
+    "h1:6I8IFY2JDKc6ntkF3C5w1rgIATpbdmvgWrnV7kcRq5o=",
     "h1:EJImbAXNraVwSO3lo+EIom8qoMd1cVvMoiZ3B1lL9Jw=",
     "zh:18b0a5d528fe3eb30060cf478db5a5efaed9d9837f4afb35ba58f0196ba6a51c",
     "zh:3cd7f28730ed216740a7bc62169a0d630f95ecdaee1162952aab67011fcf8831",

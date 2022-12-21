@@ -1,8 +1,4 @@
 # -- main.tf --
-# resource "openstack_networking_network_v2" "network_1" {
-#   name           = "network_1_test"
-#   admin_state_up = "true"
-# }
 
 #Security group within virtual instance
 resource "openstack_networking_secgroup_v2" "secgroup_1" {
@@ -31,16 +27,12 @@ resource "openstack_networking_secgroup_rule_v2" "secgroup_rule_ping" {
   security_group_id = "${openstack_networking_secgroup_v2.secgroup_1.id}"
 }
 
-data "template_file" "script" {
-  template = "${file("${path.module}/scripts/base.sh")}"
+data "template_file" "docker_script" {
+    template = "${file("${path.module}/scripts/pre_init_cloud/docker.sh")}"
 }
 
-data "template_file" "script2" {
-    template = "${file("${path.module}/scripts/docker.sh")}"
-}
-
-data "template_file" "script3" {
-    template = "${file("${path.module}/scripts/minikube.sh")}"
+data "template_file" "minikube_script" {
+    template = "${file("${path.module}/scripts/pre_init_cloud/minikube.sh")}"
 }
 
 data "cloudinit_config" "user_data" {
@@ -50,13 +42,13 @@ data "cloudinit_config" "user_data" {
   part {
     filename     = "init.cfg"
     content_type = "text/cloud-config"
-    content      = "${data.template_file.script2.rendered}"
+    content      = "${data.template_file.docker_script.rendered}"
   }
 
     part {
     filename     = "init2.cfg"
     content_type = "text/cloud-config"
-    content      = "${data.template_file.script3.rendered}"
+    content      = "${data.template_file.minikube_script.rendered}"
   }
 }
 

@@ -1,4 +1,5 @@
 # -- locals.tf --
+
 locals {
   uniza_os_region   = "RegionOne"
   uniza_os_auth_url = "http://158.193.138.33:5000/v3/"
