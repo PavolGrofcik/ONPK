@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   app-fe:
-    image: app-fe:1.1
+    image: app-fe:1.2
     ports:
       - 8080:80
     depends_on:
@@ -11,12 +11,16 @@ services:
 
   app-be:
     image: app-be:1.2
+    # ports:
+    #   - 9080:9080
     environment:
-      MONGO_CONN_STR: mongodb://127.0.0.1:27017
+      MONGO_CONN_STR: mongodb://mongo:27017
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
     depends_on:
       - mongo
+    networks:
+      - mongo_net
 
 
   mongo:
@@ -32,6 +36,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: password
     ports:
       - 27017:27017
+
+
 networks:
   mongo_net:
     driver: bridge

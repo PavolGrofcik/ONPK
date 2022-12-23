@@ -1,0 +1,21 @@
+FROM node:12-alpine as BUILD
+
+WORKDIR /app
+COPY package.json .
+COPY yarn.lock .
+
+# RUN npm install --production 
+RUN yarn install 
+COPY . .
+RUN yarn build
+# RUN ls -la /app/
+
+FROM nginx:stable-alpine
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=build /app/build .
+# COPY --from=build /app/public/ /usr/share/nginx/html
+COPY --from=build /app/env.sh /docker-entrypoint.d
+COPY conf.d/default.conf /etc/nginx/conf.d
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+
